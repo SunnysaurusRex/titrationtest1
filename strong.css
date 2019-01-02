@@ -12,4 +12,16 @@
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     border-style: ridge;
+    background-color: darkcyan;
+ }
+ .outputBox {
+   font-family: 'Nanum Gothic', sans-serif;
+   background-color: salmon;
+   border: red;
+   border-width: 5px;
+   border-style: groove;
+   padding-inline-start: 40px;
+   padding-inline-end: 40px;
+   padding-block-start: 3px;
+   padding-block-end: 3px;
  }
