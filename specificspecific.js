@@ -7,7 +7,7 @@ function specific() {
 	titrant = parseFloat(titrant);
 	var addedvolume = document.getElementById("addedtitrantvolume").value;
 	addedvolume = parseFloat(addedvolume);	
-	alert("calculating . . .  l o l");
+	//alert("calculating . . .  l o l");
 	var Hmoles, Hconc, pH;
 	var equivalencevolume = parseFloat(initialM*initialV/titrant);
 	var endtitration = equivalencevolume*2;
@@ -63,7 +63,7 @@ function specific() {
 		document.getElementById("pHoutput").innerHTML = pH;
 		window.alert(pH);
 		document.getElementById("image").src = "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/35270238_1783045888426275_7040341182223745024_n.jpg?_nc_cat=108&_nc_ht=scontent-lga3-1.xx&oh=c4c6290a9b1df9ee5d0b76aec984d034&oe=5C9466DA"; 
-		document.getElementById("mus"). src = "music.mp3";
+		document.getElementById("mus").src = "music2.mp3";
 	}
 }
 
