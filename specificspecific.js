@@ -62,6 +62,11 @@ function specific() {
 	function pageOutput(pH) {
 		document.getElementById("pHoutput").innerHTML = pH;
 		window.alert(pH);
+		if( document.getElementById("image").src == "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/35270238_1783045888426275_7040341182223745024_n.jpg?_nc_cat=108&_nc_ht=scontent-lga3-1.xx&oh=c4c6290a9b1df9ee5d0b76aec984d034&oe=5C9466DA" ) {
+			document.getElementById("image").src = "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/11022555_847033822027491_7382034102374048456_n.jpg?_nc_cat=109&_nc_ht=scontent-lga3-1.xx&oh=942120caa484b662f1e8fed336d418b3&oe=5CC1EAE2";
+		} else { 
+			document.getElementById("image").src = "https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/35270238_1783045888426275_7040341182223745024_n.jpg?_nc_cat=108&_nc_ht=scontent-lga3-1.xx&oh=c4c6290a9b1df9ee5d0b76aec984d034&oe=5C9466DA"; 
+		}
 	}
 }
 

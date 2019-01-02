@@ -25,3 +25,9 @@
    padding-block-start: 3px;
    padding-block-end: 3px;
  }
+ .center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 48%;
+ }
