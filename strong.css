@@ -1,0 +1,15 @@
+.calculateButton { 
+    text-align: center;
+    color:red;
+    justify-content: center;
+ }
+ .table {
+    font-family: 'IBM Plex Mono', monospace;
+    border-spacing: 10px;
+    padding: 10px;
+    border: blueviolet;
+    border-width: 3px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-style: ridge;
+ }
