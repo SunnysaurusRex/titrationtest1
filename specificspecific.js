@@ -14,13 +14,13 @@ function specific() {
 
 	if( boundcheck(addedvolume,equivalencevolume) == 0 ) {
 		var pH = acidic( initialM, initialV, titrant, equivalencevolume, addedvolume);
-		printResult(pH);
+		pageOutput(pH);
 	} else if( boundcheck(addedvolume,equivalencevolume) == 1 ) {
 		var pH = eqpt();
-		printResult(pH);	
+		pageOutput(pH);	
 	} else if( boundcheck(addedvolume,equivalencevolume) == 2 ) {
 		var pH = basic( initialV, titrant, equivalencevolume, addedvolume);
-		printResult(pH);
+		pageOutput(pH);
 	}
 
 	function acidic( initialM, initialV, titrant, equivalencevolume, addedvolume) {
@@ -58,6 +58,10 @@ function specific() {
 	}
 	function printResult(pH) {
 		document.write( 'pH =	'+pH );
+	}
+	function pageOutput(pH) {
+		document.getElementById("pHoutput").innerHTML = pH;
+		window.alert(pH);
 	}
 }
 
