@@ -1,4 +1,4 @@
-function calculateValues() {
+function calculateValues() {   
 	var initialM = document.getElementById("strongacidconcentration").value;
 	initialM = parseFloat(initialM);
 	var initialV = document.getElementById("strongacidvolume").value;
@@ -9,9 +9,10 @@ function calculateValues() {
 	pointsPerRegion = parseInt(pointsPerRegion);	
 	var equivalencevolume = parseFloat(initialM*initialV/titrant);
    var endtitration = equivalencevolume*2;
-
    var spacing = equivalencevolume/pointsPerRegion;
-   var values = [];
+
+   removeDatalol();
+
    beforeEq( initialM, initialV, titrant, equivalencevolume, spacing);
    eqpt(equivalencevolume);
    afterEq( initialV, titrant, equivalencevolume, spacing, endtitration );
@@ -22,12 +23,6 @@ function beforeEq( initialM, initialV, titrant, equivalencevolume, spacing) {
    var addedvolume = 0, i;
    while( addedvolume < equivalencevolume ) {
       var pH = acidic( initialM, initialV, titrant, addedvolume);
-      var points = [];
-      var xcoord = addedvolume.toString();
-      var ycoord = pH.toString();
-      points.push( "x:"+xcoord );
-      points.push( "y:"+ycoord );
-      console.log( points);
       addData( titrationCurve, addedvolume, pH);
       addedvolume = addedvolume+spacing;
    }   
@@ -39,10 +34,8 @@ function eqpt(equivalencevolume) {
 }
 function afterEq( initialV, titrant, equivalencevolume, spacing, endtitration) {
    var addedvolume = equivalencevolume + spacing;
-   console.log( basic( initialV, titrant, equivalencevolume, addedvolume) );
    while ( addedvolume <= endtitration ) {
       var pH = basic( initialV, titrant, equivalencevolume, addedvolume);
-      console.log( pH );
       addData( titrationCurve, addedvolume, pH);
       addedvolume = addedvolume+spacing;
    }
@@ -53,6 +46,21 @@ function addData( chart, label, dataArray ) {
       dataset.data.push( dataArray);
       chart.update();
    })
+}
+function removeData(chart) {
+   chart.data.labels.pop();
+   chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+   });
+   chart.update();
+}
+function removeDatalo(chart) {
+   while(chart.data.labels.length != 0) {
+      removeData(chart);
+   }
+}
+function removeDatalol() {
+   removeDatalo(titrationCurve);
 }
 function acidic( initialM, initialV, titrant, addedvolume) {
    var totalvolume = initialV + addedvolume;
