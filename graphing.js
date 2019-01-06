@@ -23,7 +23,9 @@ function beforeEq( initialM, initialV, titrant, equivalencevolume, spacing) {
    var addedvolume = 0, i;
    while( addedvolume < equivalencevolume ) {
       var pH = acidic( initialM, initialV, titrant, addedvolume);
-      addData( titrationCurve, addedvolume, pH);
+      if( pH*10000000 < 7*10000000) {
+         addData( titrationCurve, addedvolume, pH);
+      }
       addedvolume = addedvolume+spacing;
    }   
 }
