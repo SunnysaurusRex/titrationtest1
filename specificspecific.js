@@ -72,3 +72,70 @@ function test()  {
 	var initialM = document.getElementById("strongacidconcentration").value ;
 	document.write("l o l"+"	"+initialM);
 }
+
+var ctx = document.getElementById("myChart").getContext("2d");
+var myChart = new Chart(ctx, {
+   type: 'line',
+   data: {
+         labels: [ "volume added (mL)"],
+         xAxisID: "volume",
+         yAxisID: "pH",
+         datasets: [
+			{
+            label: 'pH',
+				fill: false,
+				lineTension: .01,
+            backgroundColor: [
+               'rgba(255, 99, 132, 0.2)',
+               'rgba(54, 162, 235, 0.2)',
+               'rgba(255, 206, 86, 0.2)',
+               'rgba(75, 192, 192, 0.2)',
+               'rgba(153, 102, 255, 0.2)',
+               'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+               'rgba(255,99,132,1)',
+              	'rgba(54, 162, 235, 1)',
+               'rgba(255, 206, 86, 1)',
+              	'rgba(75, 192, 192, 1)',
+              	'rgba(153, 102, 255, 1)',
+              	'rgba(255, 159, 64, 1)'
+				],
+				borderCapStyle: 'butt',
+				borderDash: [],
+				borderDashOffset: 0.0,
+				borderJoinStyle: 'miter',
+            borderWidth: 1,
+            pointBorderColor:"",
+            pointBackgroundColor: "",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "",
+            pointHoverBorderColor: "",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            //pointStyle: ,
+            //pointRotation: ,
+            showLine: true,
+				data: [ ],
+			}
+         ]
+   },
+   options: {
+      showLines: true,
+      scales: {
+         yAxes: [{
+            ticks: {
+               beginAtZero:true
+            }
+         }],
+         xAxes: [{
+            ticks: {
+               beginAtZero:true
+            }
+         }]
+      }
+   }
+});
+
